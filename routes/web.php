@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -20,3 +21,16 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('create-category', [CategoryController::class, 'create']);
 
 Route::post('post-category-form', [CategoryController::class, 'store']);
+
+Route::get('all-categories', [CategoryController::class, 'index']);
+
+Route::get('edit-category/{id}', [CategoryController::class, 'edit']);
+
+Route::post('update-category-form/{id}', [CategoryController::class, 'update']);
+
+Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
+
+Route::get('create-blog', [BlogPostController::class, 'create']);
+
+Route::post('store-blog-form', [BlogPostController::class, 'store']);
+
